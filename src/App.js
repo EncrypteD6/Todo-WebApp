@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import NewTodo from "./components/NewTodo/NewTodo";
+import ViewTodoList from "./components/ViewTodoList/ViewTodolist";
 
 function App() {
+  const [todo, setTodo] = useState([
+    "Do painting",
+    "finish breakfast",
+    "do laundry",
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="content">
+        <h1>TODO-LIST</h1>
+        <NewTodo todo={todo} addTodo={setTodo} />
+        <ViewTodoList todo={todo} updateTodo={setTodo} />
+      </div>
     </div>
   );
 }
