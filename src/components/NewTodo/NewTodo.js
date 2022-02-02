@@ -6,7 +6,7 @@ const NewTodo = ({ todo, addTodo }) => {
 
   const todoOnSubmit = (e) => {
     e.preventDefault();
-    if (newTodo == " " || newTodo.length == "") {
+    if (newTodo === " " || newTodo.length === "") {
       alert("enter a value");
     } else {
       const temp = [...todo];
